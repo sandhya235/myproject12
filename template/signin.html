@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{% static 'signin.css' %}"> -->
+    <link rel="icon" href="../static/images/project logo.webp">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-image: radial-gradient(circle at right top,rgb(4,95,95) 0% 5%,black 20% 50%);
+        color: #fff; /* White text color */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+
+
+    .container {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        background: black; /* Dark gray background for the form */
+        box-shadow: 0 4px 8px rgba(265, 255, 255, 0.5);
+        border-radius: 8px;
+    } 
+    h2 {
+        margin-bottom: 20px;
+        color: #fff;  /*White for the title */
+    }
+    .toggle-group {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .toggle-btn {
+        flex: 1;
+        padding: 5px;
+        background-color: black; /* Darker button background */
+        border: 1px solid #555; /*Subtle border for buttons */
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+        color: #fff; /* White text*/
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .toggle-btn.active {
+        background-color: #007BFF; /* Highlighted active button */
+        color: #fff;
+    }
+    .input-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    .input-group.hidden {
+        display: none;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #ccc; /* Light gray labels */
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #555; /* Subtle border */
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: #333; /* Dark background for inputs */
+        color: #fff; /* White text for inputs */
+    }
+    input::placeholder {
+        color: #888; /* Light gray placeholder text */
+    }
+    input:focus {
+        border-color: #007BFF; /* Blue focus border */
+        outline: none;
+    }
+    .actions {
+        margin-top: 15px;
+        text-align: center;
+    }
+    .btn {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    /* Divider */
+    .divider {
+        position: relative;
+        margin: 20px 0;
+        text-align: center;
+        color: #ccc; /* Light gray text */
+        font-size: 14px;
+    }
+    .divider span {
+        background: black; /* Match form background */
+        padding: 0 10px;
+        position: relative;
+        z-index: 1;
+    }
+    .divider:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #555; /* Subtle divider line */
+        z-index: 0;
+    }
+    /* Alternative Actions */
+    .alternative-actions {
+        text-align: center;
+    }
+    .google-btn {
+        width: 100%;
+        padding: 10px;
+        background-color:black; /* Google red */
+        color: #fff;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-bottom: 10px;
+    }
+    .google-btn:hover {
+        background-color: white;
+        color: black;
+    }
+    .create-account-link {
+        font-size: 14px;
+        color: #007BFF;
+        text-decoration: none;
+    }
+    .create-account-link:hover {
+        text-decoration: underline;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h2>Sign In</h2>
+            <form action="#" method="POST">
+                <div class="toggle-group">
+                    <button type="button" class="toggle-btn" id="emailBtn"><u>Email</u></button>
+                    <button type="button" class="toggle-btn" id="phoneBtn">Phone</button>
+                </div>
+                <div class="input-group" id="emailInput">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group hidden" id="phoneInput">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <!-- <div class="actions">
+                    <button type="submit" class="btn">Sign In</button>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div> -->
+            </form>
+            <div class="divider">
+                <span>OR</span>
+            </div>
+            <div class="alternative-actions">
+                <button class="btn google-btn">Sign In with Google</button>
+                <button class="btn google-btn">Create a New Account</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

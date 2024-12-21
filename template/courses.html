@@ -1,0 +1,397 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Program</title>
+    <link rel="icon" href="../static/images/project logo.webp">
+    <!-- <link rel="stylesheet" href="{% static 'courses.css' %}"> -->
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #fff;
+            height: 1000px;
+        }
+        .container{
+            padding: 20px;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 20px;
+            background-color: transparent;
+            backdrop-filter: blur(200px);
+            position: fixed;
+        }
+        .anchors{
+            position: relative;
+            left: 50%;
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #logo_img{
+            width: 20px;
+            height: 30px;
+            position: relative;
+            top: 5px;
+            right: 10px;
+        }
+        .navbar nav a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 50px;
+        }
+        .sign-in {
+            background-color: #00c16e;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+
+
+        .main_heading{
+            width: 60%;
+            margin-top: 200px;
+            margin-left: 5%;
+            font-size: 90px;
+            word-spacing: 10px;
+        }
+        h1,span{
+            color: white;
+            font-weight: unset;
+            line-height: 0.89;
+        }
+        .text_highlight{
+            color: aqua;
+        }
+
+
+
+        .small_heading{
+            width: 60%;
+            margin-top: 90px;
+            margin-left: 5%;
+        }
+
+
+
+        .short_heading{
+            width: 60%;
+            margin-top: 90px;
+            margin-left: 5%;
+            font-size: 30px;
+        }
+
+
+
+        .images{
+            width: 300px;
+            height: 180px;
+            border-radius: 5px;
+            float: left;
+        }
+        .img_div{
+            background-color:rgb(27, 26, 26);
+            width: 300px;
+            height: 400px;
+            margin-left: 60px;
+            border-radius: 15px;
+            margin-top: 50px;
+            float: left;
+        }
+        #div_{
+            color: white;
+            margin-top: 300px;
+            width: 100px;
+            font-weight: lighter;
+            font-size: 25px;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        .btn{
+            background-color: grey;
+            border-collapse: collapse;
+            width: 70px;
+            height: 25px;
+            margin-top: 10px;
+        }
+        .color{
+            color: aqua;
+            font-size: 17px;
+        }
+        .number{
+            color: white;
+            font-size: 30px;
+            margin-top: 8px;
+        }
+        .cross_number{
+            font-size: 20px;
+            margin-left: 20px;
+        }
+        .percentage{
+            margin-left: 50px;
+            height: 25px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+
+
+        .view{
+            text-align: center;
+            color: black;
+            float: left;
+            width: 300px;
+            height: 35px;
+            background-color: aqua;
+            margin-left: 4%;
+            margin-top: 1%;
+            font-size: 25px;
+            border-radius: 10px;
+        }
+
+
+
+        .views{
+            width: 300px;
+            height: 35px;
+            float: left;
+            background-color: aqua;
+            margin-top: 31%;
+            margin-left: -300px;
+            font-size: 25px;
+            border-radius: 10px;
+            text-align: center;
+            color: black;
+        } 
+
+
+
+        #cnt{
+            float: left;
+            margin-top: 50%;
+            margin-left: 7%;
+            font-size: 50px;
+            text-align: center;
+        }
+        .clr{
+            color: aqua;
+        }
+
+
+
+        .companies{
+            width:1000px;
+            height: 320px;
+            margin-top: 50px;
+            margin-left: 18%;
+        }
+
+
+
+        .explore_course_btn {
+            text-align: center;
+            background-color: aqua;
+            width: 250px;
+            height: 50px;
+            border-radius: 15px;
+            margin-top: 50px;
+            margin-left: 44%;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .explore_course_btn a{
+            text-decoration: none;
+        }
+
+
+
+        hr{
+            margin-top: 8%;
+            border-color: gray;
+            border-top: thistle;
+            width: 95%;
+            transform: translate(2.5%);
+        }
+
+
+
+        .pro_logo{
+            width: 40px;
+            height: 55px;
+            margin-top: 90px;
+            margin-left: 5%;
+        }
+        .connect{
+            color: white;
+            margin-top: 0.5%;
+            margin-left: 5%;
+        }
+        .social_media{
+            width: 110px;
+            height: 50px;
+            margin-top: 1px;
+            margin-left: 73px;
+        }
+
+
+
+        .comp{
+            margin-top: -150px;
+            margin-left: 515px;
+            font-size: 18px;
+        }
+        .headings a{
+            margin-top: -1%;
+            margin-left: 34%;
+            line-height: 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        .community{
+            margin-top: -246px;
+            margin-left: 64%;
+            font-size: 17px;
+        }
+        .comm_headings a{
+            margin-left: 64.3%;
+            line-height: 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        .get{
+            margin-top: -6.5%;
+            margin-left: 86%;
+            font-size: 19px;
+        }
+        .get_headings a {
+            margin-left: 86%;
+            line-height: 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        .footer{
+            font-size: 17px;
+            line-height: 5px;
+            margin-top: 19px;
+            font: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="logo"><img id="logo_img" src="../static/images/project logo.webp" alt="">Sheryians coding school</div>
+            <nav class="anchors">
+                <a href="{% url 'project:mywebsite' %}">Home</a>
+                <a href="{% url 'project:courses' %}">Courses</a>
+                <a href="{% url 'project:bootcamp' %}">Bootcamp(Kodr)</a>
+                <a href="{% url 'project:requested' %}">Request Callback</a>
+                <a href="{% url 'project:signin' %}" class="sign-in">Sign In</a>
+            </nav>
+        </header>
+    </div>
+    <br><br>
+
+    <h1 class="main_heading">
+        <span>We're not a <span class="text_highlight">course factory.</span><br>
+    </h1>
+
+    <h1 class="small_heading">We focus on courses that really help.</h1>
+    
+    <h1 class="short_heading">Courses which do work ↓</h1>
+
+
+    <div class="img_div"><img class="images" src="../static/images/image1.webp" alt=""><span id="div_">Front End Domination:<br>Create Anything with Code<button class="btn">HINDI</button><br><br><br><span class="color">Limited Time Discount<br><span class="number">₹ 4999</span><del class="cross_number">₹9999</del><button class="percentage">50% off</button></span></span></div> 
+    <div class="img_div"><img class="images" src="../static/images/image2.webp" alt=""><span id="div_">Back End Domination:<br>Create Efficient Back End.<button class="btn">HINDI</button><br><br><br><span class="color">Limited Time Discount<br><span class="number">₹ 5999</span><del class="cross_number">₹11999</del><button class="percentage">50% off</button></span></span></div>
+    <div class="img_div"><img class="images" src="../static/images/image3.webp" alt=""><span id="div_">Apptitude & Reasoning for<br>Campus Placements<br><button class="btn">HINGLISH</button><br><br><br><span class="color">Limited Time Discount<br><span class="number">₹ 999</span><del class="cross_number">₹1500</del><button class="percentage">33% off</button></span></span></div>
+    <div class="img_div"><img class="images" src="../static/images/image4.webp" alt=""><span id="div_">Java & DSA Domination<button class="btn">HINGLISH</button><br><br><br><br><span class="color">Limited Time Discount<br><span class="number">₹ 4999</span><del class="cross_number">₹9999</del><button class="percentage">50% off</button></span></span></div>
+
+    <div class="view">View Details</div>
+    <div class="view">View Details</div>
+    <div class="view">View Details</div>
+    <div class="view">View Details</div>
+
+
+
+    <div class="img_div"><img class="images" src="../static/images/image5.webp" alt=""><span id="div_">Java & DSA Domination<button class="btn">HINDI</button><br><br><br><br><span class="color">Limited Time Discount<br><span class="number">₹ 2499</span><del class="cross_number">₹3500</del><button class="percentage">29% off</button></span></span></div>
+    <br>
+
+    <div class="views">View Details</div>
+    <br>
+
+    <div id="cnt">
+        <span>Top <span class="clr">companies</span> our students<br> working with</span>
+    </div>
+
+    <div >
+        <img class="companies" src="../static/images/tcs.webp" alt="">
+    </div>
+
+    <button class="explore_course_btn"><a href="{% url 'project:courses' %}">Explore Courses</a></button><br>
+
+    <hr>
+    <br>
+    <div>
+        <div class="image">
+            <img class="pro_logo" src="../static/images/project logo.webp" alt="">
+            <div class="connect">Let's connect with our socials</div>
+            <img class="social_media" src="../static/images/pngwing.com (3).png" alt="">
+        </div>
+        <div>
+            <h1 class="comp">COMPANY</h1>
+            <div class="headings"><br>
+                <a href="">About Us</a><br>
+                <a href="">Support</a><br>
+                <a href="">Privacy Policy</a><br>
+                <a href="">Terms and Condition</a><br>
+                <a href="">Pricing and Refund</a><br>
+                <a href="">Hire From Us</a><br>
+                <a href="">Bug Bounty</a>
+            </div>
+        </div>
+        <div>
+            <h1 class="community">COMMUNITY</h1>
+            <div class="comm_headings"><br>
+                <a href="">Inertia</a><br>
+                <a href="">Discord</a><br>
+            </div>
+        </div>
+        <div>
+            <h1 class="get">Get In Touch</h1>
+            <div class="get_headings"><br>
+                <a href="">+917882686877,</a><br>
+                <a href="">+917734863762</a><br>
+                <a href="">hello@sheryians.com</a><br>
+                <a href="">23-B,Indrapuri Sector C,</a>
+                <a href="">Bhopal(MP),462021</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <center>
+        <h1 class="footer">Copyright © 2024 Sheryians Pvt. Ltd.</h1>
+        <h1 class="footer">All Rights Reserved.</h1>
+    </center>
+        
+</body>
+</html>

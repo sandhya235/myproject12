@@ -1,0 +1,502 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Program</title>
+    <link rel="icon" href="../static/images/project logo.webp">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: #fff;
+            height: 1000px;
+        }
+
+
+
+        .container {
+            padding: 10px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10px;
+            background-color: transparent;
+            backdrop-filter: blur(200px);
+            position: fixed;
+        }
+        .anchors{
+            position: relative;
+            left: 90%;    
+        }
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #logo_img{
+            width: 20px;
+            height: 30px;
+            position: relative;
+            top: 5px;
+            right: 10px;
+        }
+        .navbar nav a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .sign-in {
+            background-color: #00c16e;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 60px;
+            margin-left: 50px;
+        }
+        .info {
+            max-width: 45%;
+        }
+        .info h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .details button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .details .verified {
+            color: #00c16e;
+            margin-left: 5px;
+        }
+        .price {
+            font-size: 40px;
+            margin-top: 50px;
+        }
+        .highlight {
+            color: #00c16e;
+            font-weight: bold;
+            font-size: 40px;
+        }
+        .seats-full {
+            background-color: #00c16e;
+            color: #fff;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: not-allowed;
+        }
+        .video iframe {
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+
+
+        .belief-section {
+            margin: 100px 0;
+            width: 90%;
+            margin-left: 40px;
+        }
+        .belief-section span {
+            font-size: 100px;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1;
+        }
+        .belief-section .highlight-green {
+            color: #00c16e;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .feature {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 90px;
+            border-radius: 30px;
+            font-size: 25px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+            transition: transform 0.2s;
+        }
+        .feature:hover {
+            transform: scale(1.1);
+        }
+
+
+
+        .coding-schedule {
+            margin: 50px 0;
+            width: 50%;
+            margin-left: 80px;
+            margin-top: 50px;
+        }
+        .coding-schedule h1 {
+            font-size: 150px;
+            font-weight: bold;
+            color: #fff;
+            line-height: 1.2;
+            margin: 0;
+        }
+        .coding-schedule .highlight-green {
+            color: #00c16e; /* Green color to emphasize "5 Hours" */
+        }
+        .coding-schedule .everyday{
+            font-size: 45px;
+        }
+        .coding-schedule .subtext {
+            font-size: 20px;
+            font-weight: 500;
+            color: #fff;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+        .coding-schedule .header {
+            margin-top: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #fff; 
+        }
+
+
+
+        .dominate-schedule  {
+            margin: 50px 0;
+            width: 55%;
+            margin-left: 80px;
+            margin-top: 15%;
+        }
+        .dominate-schedule .dominate {
+            font-size: 200px;
+        }
+        .dominate-schedule .header{
+            margin-top: -20vh;
+            color: gray;
+            font-size: 80px;
+        }
+
+
+
+        select{
+            width: 88%;
+            height: 70px;
+            background-color: #121212;
+            color: white;
+            padding: 15px;
+            border: none;
+            margin-left: 5%;
+            font-size: 25px;
+        }
+
+
+
+        hr{
+            width: 89%;
+        }
+
+
+
+        .hr{
+            margin-right: 90px;
+            margin-top: 8%;
+            border-color: gray;
+            border-top: thistle;
+            width: 90%;
+            transform: translate(2.5%);
+        }
+        .pro_logo{
+            width: 40px;
+            height: 55px;
+            margin-top: 90px;
+            margin-left: 5%;
+        }
+        .connect{
+            color: white;
+            margin-top: 0.5%;
+            margin-left: 5%;
+        }
+        .social_media{
+            width: 110px;
+            height: 50px;
+            margin-top: 1px;
+            margin-left: 73px;
+        }
+
+
+
+        .comp {
+            margin-top: -160px;
+            margin-left: 515px;
+            font-size: 18px;
+        }
+        .headings a{
+            margin-top: -1%;
+            margin-left: 34%;
+            line-height: 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        .community{
+            margin-top: -246px;
+            margin-left: 64%;
+            font-size: 17px;
+        }
+        .comm_headings a{
+            margin-left: 64.3%;
+            line-height: 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        .get{
+            margin-top: -6.5%;
+            margin-left: 86%;
+            font-size: 19px;
+        }
+        .get_headings a {
+            margin-left: 86%;
+            line-height: 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        .footer{
+            font-size: 17px;
+            line-height: 5px;
+            margin-top: 19px;
+            font: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="navbar">
+            <div class="logo"><img id="logo_img" src="../static/images/project logo.webp" alt="">Sheryians coding school</div>
+            <nav class="anchors">
+                <a href="{% url 'project:mywebsite' %}">Home</a>
+                <a href="{% url 'project:courses' %}">Courses</a>
+                <a href="{% url 'project:bootcamp' %}">Bootcamp(Kodr)</a>
+                <a href="{% url 'project:requested' %}">Request Callback</a>
+                <a href="{% url 'project:signin' %}" class="sign-in">Sign In</a>
+            </nav>
+        </header>
+
+        <main class="content">
+            <div class="info">
+                <h1>6 months In-House Bootcamp programme - Kodr.</h1>
+
+                <div class="details">
+                    <button>Starts On: 11 Nov 2024</button>
+                    <button>Placement Assistance <span class="verified">✔</span></button>
+                </div>
+
+                <p class="price">Price <span class="highlight">₹ 59000</span> [ 50,000 + 18% GST ]</p>
+
+                <button class="seats-full">Seats Are Full</button>
+
+            </div>
+
+            <div class="video">
+                <iframe width="696" height="391" src="https://www.youtube.com/embed/pOGLAlGCKFE" title="This Bootcamp Will Change Your Life: Kodr x Sheryians !" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+        </main>
+    </div>
+
+
+    <section class="belief-section">
+        <span>
+            we believe in,<br><span class="highlight-green">Consistency.</span>No shortcuts.
+        </span>
+        <div class="features">
+            <div class="feature">MERN Stack ⚡</div>
+            <div class="feature">Data Structures & Algorithm 👨‍💻</div>
+            <div class="feature">DBMS - SQL 🤟</div>
+            <div class="feature">CORE CS Subjects ⚙️</div>
+            <div class="feature">Placement Assistance 💰</div>
+        </div>
+    </section>
+
+
+    <section class="coding-schedule">
+        <h1>
+            Non-Stop <span class="highlight-green">5 Hours</span> Coding<span class="everyday">[Everyday]</span>
+        </h1>
+        <div class="header">
+            Monday To Saturday. 11:00 AM To 4:00 PM.
+        </div>
+    </section>
+
+    <section class="dominate-schedule">
+        <h1 class="dominate">
+            Dominate.
+        </h1>
+        
+        <div class="header">
+            From Start To Victory.
+        </div>
+    </section><br><br><br>
+
+    <section>
+            <hr>
+            <select>
+                <option>HTML/CSS</option>
+                <option>CI/CD Pipelines</option>
+                <option>Docker</option>
+                <option>Containerization</option>
+                <option>Versioning</option>
+                <option>Load Balancing</option>
+            </select>
+            <hr>
+            <select>
+                <option>JavaScript</option>
+                <option>CI/CD Pipelines</option>
+                <option>Docker</option>
+                <option>Containerization</option>
+                <option>Versioning</option>
+                <option>Load Balancing</option>
+            </select>
+            <hr>
+            <select>
+                <option>React JS</option>
+                <option>CI/CD Pipelines</option>
+                <option>Docker</option>
+                <option>Containerization</option>
+                <option>Versioning</option>
+                <option>Load Balancing</option>
+            </select>
+            <hr>
+            <select>
+                <option>Data Structure Algorithm(DSA)</option>
+                <option>CI/CD Pipelines</option>
+                <option>Docker</option>
+                <option>Containerization</option>
+                <option>Versioning</option>
+                <option>Load Balancing</option>
+            </select>
+            <hr>
+            <select>
+                <option>Node.js and Express JS(Backend)</option>
+                <option>CI/CD Pipelines</option>
+                <option>Docker</option>
+                <option>Containerization</option>
+                <option>Versioning</option>
+                <option>Load Balancing</option>
+            </select>
+            <hr>
+            <select>
+                <option>DataBases</option>
+                <option>CI/CD Pipelines</option>
+                <option>Docker</option>
+                <option>Containerization</option>
+                <option>Versioning</option>
+                <option>Load Balancing</option>
+            </select>
+            <hr>
+            <select>
+                <option>Git/GitHub</option>
+                <option>CI/CD Pipelines</option>
+                <option>Docker</option>
+                <option>Containerization</option>
+                <option>Versioning</option>
+                <option>Load Balancing</option>
+            </select>
+            <hr>
+            <select>
+                <option>Devops and Deployment</option>
+                <option>CI/CD Pipelines</option>
+                <option>Docker</option>
+                <option>Containerization</option>
+                <option>Versioning</option>
+                <option>Load Balancing</option>
+            </select>
+            <hr>
+            <select>
+                <option>Additional Topics</option>
+                <option>CI/CD Pipelines</option>
+                <option>Docker</option>
+                <option>Containerization</option>
+                <option>Versioning</option>
+                <option>Load Balancing</option>
+            </select>
+    </section>
+ 
+    
+    <hr class="hr">
+        <br>
+        <div>
+            <div class="image">
+                <img class="pro_logo" src="../static/images/project logo.webp" alt="">
+                <div class="connect">Let's connect with our socials</div>
+                <img class="social_media" src="../static/images/pngwing.com (3).png" alt="">
+            </div>
+            <div>
+                <h1 class="comp">COMPANY</h1>
+                <div class="headings"><br>
+                    <a href="">About Us</a><br>
+                    <a href="">Support</a><br>
+                    <a href="">Privacy Policy</a><br>
+                    <a href="">Terms and Condition</a><br>
+                    <a href="">Pricing and Refund</a><br>
+                    <a href="">Hire From Us</a><br>
+                    <a href="">Bug Bounty</a>
+                </div>
+            </div>
+            <div>
+                <h1 class="community">COMMUNITY</h1>
+                <div class="comm_headings"><br>
+                    <a href="">Inertia</a><br>
+                    <a href="">Discord</a><br>
+                </div>
+            </div>
+            <div>
+                <h1 class="get">Get In Touch</h1>
+                <div class="get_headings"><br>
+                    <a href="">+917882686877,</a><br>
+                    <a href="">+917734863762</a><br>
+                    <a href="">hello@sheryians.com</a><br>
+                    <a href="">23-B,Indrapuri Sector C,</a>
+                    <a href="">Bhopal(MP),462021</a>
+                </div>
+            </div>
+        </div>
+    <hr class="hr"><br><br>
+        <center>
+            <h1 class="footer">Copyright © 2024 Sheryians Pvt. Ltd.</h1>
+            <h1 class="footer">All Rights Reserved.</h1>
+        </center>   
+</body>
+</html>
